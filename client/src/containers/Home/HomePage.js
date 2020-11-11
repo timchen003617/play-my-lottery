@@ -26,7 +26,6 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormLabel from "@material-ui/core/FormLabel";
 import Typography from "@material-ui/core/Typography";
 import {
-  betNumMappingPlay,
   permutator,
   statusMapping,
   isNow,
@@ -236,14 +235,6 @@ let HomePage = (props) => {
   const handleQuickTypeCategoryChange = (event) => {
     const type = event.target.value;
     setQuickTypeCategory(type);
-
-    if (
-      number &&
-      number.length > 2 &&
-      handleOnChangeValidateNum(number)
-    ) {
-      const { lotteryTypeId } = betNumMappingPlay(number, type);
-    }
   };
 
   const validateNumberFormat = (num) => {
@@ -313,7 +304,7 @@ let HomePage = (props) => {
     let numberArray = [];
     let betAmountArray = [];
 
-    if (quickTypeCategory === "C" && num.length >= 4) {
+    if (quickTypeCategory === "C") {
       //全轉
       let numArray = num.split("");
       //1234, 123X, 4個號碼產生4! = 24種排列組合...

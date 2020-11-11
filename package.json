@@ -1,5 +1,5 @@
 {
-  "name": "member-node-server",
+  "name": "play-my-lottery",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "start": "NODE_ENV=production LOG_LEVEL=debug babel-node src/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-    "serve": "babel-node dist/index.js",
+    "serve": "babel-node build/index.js",
     "start:stage": "NODE_ENV=stage LOG_LEVEL=debug babel-node src/index --inspect=7000",
     "start:debug": "NODE_ENV=development LOG_LEVEL=trace nodemon --exec babel-node src/index.js",
     "w": "cross-env NODE_ENV=development LOG_LEVEL=trace nodemon --exec babel-node src/index.js",
@@ -18,7 +18,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "happytree",
+  "license": "Tim",
   "dependencies": {
     "@babel/cli": "^7.12.1",
     "@babel/compat-data": "^7.9.0",
@@ -51,7 +51,6 @@
   "devDependencies": {
     "cross-env": "^6.0.0",
     "dotenv": "^8.2.0",
-    "eslint": "^6.5.1",
     "nodemon": "^1.19.3"
   },
   "browserslist": [

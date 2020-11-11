@@ -3,7 +3,7 @@ const config = {
         node_server: 'http://localhost:3000'
     },
     production: {
-        node_server: 'https://play-my-lottery.herokuapp.com'
+        node_server: 'http://localhost:3000'
     }
 }
 
