@@ -30,20 +30,19 @@ const jsonParser = bodyParser.json({ limit: '8mb' })
 app.use('/api', bodyParser.urlencoded({ extended: false }))
 app.use('/api', jsonParser, routes)
 
-// the __dirname is the current directory from where the script is running
-app.use(express.static(join(__dirname, 'client/dist')));
+app.use(express.static('client/dist'));
 
 //production mode
 if(process.env.NODE_ENV === 'production') {
-  app.use(express.static(join(__dirname, 'client/dist')));
+  app.use(express.static('client/dist'));
   //
   app.get('*', (req, res) => {
-    res.sendFile(join(__dirname = 'client/dist/index.html'));
+    res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
   })
 }
 // send the user to index html page inspite of the url
 app.get('*', (req, res) => {
-  res.sendFile(join(__dirname = '/client/dist/index.html'));
+  res.sendFile(join(__dirname + '/client/dist/index.html'));
 })
 
 app.use((err, req, res, next) => {

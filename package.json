@@ -8,7 +8,6 @@
     "server": "NODE_ENV=stage LOG_LEVEL=trace nodemon --exec babel-node src/index.js",
     "client": "npm start --prefix client",
     "start": "NODE_ENV=production LOG_LEVEL=debug babel-node src/index.js",
-    "build": "babel src -d dist",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
     "serve": "babel-node dist/index.js",
