@@ -10,7 +10,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
     "build": "babel src -d dist",
-    "start": "npm run build &&NODE_ENV=stage LOG_LEVEL=debug babel-node src/index.js",
+    "start": "NODE_ENV=production LOG_LEVEL=debug babel-node src/index.js",
     "serve": "babel-node dist/index.js",
     "start:stage": "NODE_ENV=stage LOG_LEVEL=debug babel-node src/index --inspect=7000",
     "start:debug": "NODE_ENV=development LOG_LEVEL=trace nodemon --exec babel-node src/index.js",
