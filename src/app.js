@@ -26,21 +26,14 @@ app.use(cors());
 
 const jsonParser = bodyParser.json({ limit: "8mb" });
 
+app.use(express.static(join(config.root, "client", "build")));
+
+
 app.use("/api", bodyParser.urlencoded({ extended: false }));
 app.use("/api", jsonParser, routes);
 
-app.use(express.static(join(__dirname, "..", "client/build")));
-//production mode
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(join(__dirname, "..", "client/build")));
-  //
-  app.get("*/", (req, res) => {
-    res.sendFile(join((__dirname, "..", "client/build/index.html")));
-  });
-}
-// send the user to index html page inspite of the url
-app.get("*/", (req, res) => {
-  res.sendFile(join(__dirname, "..", "/client/public/index.html"));
+app.get("/*", (req, res) => {
+  res.sendFile(join((config.root, "client", "build", "index.html")));
 });
 
 app.use((err, req, res, next) => {

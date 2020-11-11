@@ -2,7 +2,7 @@ import { join } from 'path'
 
 const config = {
   development: {
-    port: 3000,
+    port: 8080,
     root: join(__dirname, '..'),
     expiresIn: 60 * 60 * 2.5, // (單位：秒)
     memoryCacheExpire: 60 * 60 * 2.5 * 1000, // 單位(毫秒)
@@ -14,7 +14,7 @@ const config = {
     MYSQL_DB: 'heroku_824935d46004f29'
   },
   stage: {
-    port: 3000,
+    port: 8080,
     root: join(__dirname, '..'),
     expiresIn: 60 * 60 * 2.5, // (單位：秒)
     memoryCacheExpire: 60 * 60 * 2.5 * 1000, // 單位(毫秒)
@@ -27,7 +27,7 @@ const config = {
     MYSQL_DB: 'heroku_824935d46004f29'
   },
   production: {
-    port: 3000,
+    port: 8080,
     root: join(__dirname, '..'),
     expiresIn: 60 * 60 * 2.5, // (單位：秒)
     memoryCacheExpire: 60 * 60 * 2.5 * 1000, // 單位(毫秒)
