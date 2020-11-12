@@ -13,8 +13,7 @@
     "serve": "babel-node build/index.js",
     "start:stage": "NODE_ENV=stage LOG_LEVEL=debug babel-node src/index --inspect=7000",
     "start:debug": "NODE_ENV=development LOG_LEVEL=trace nodemon --exec babel-node src/index.js",
-    "w": "cross-env NODE_ENV=development LOG_LEVEL=trace nodemon --exec babel-node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "w": "cross-env NODE_ENV=development LOG_LEVEL=trace nodemon --exec babel-node src/index.js"
   },
   "keywords": [],
   "author": "",

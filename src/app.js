@@ -18,9 +18,9 @@ app.set("trust proxy", 1);
 
 app.use(cookieParser());
 
-morgan.format("tree_member", "[tree_member] :method :url :status");
+morgan.format("play-my-lottery", "[play-my-lottery] :method :url :status");
 
-app.use(morgan("tree_member"));
+app.use(morgan("play-my-lottery"));
 app.use(helmet());
 app.use(cors());
 
@@ -33,7 +33,7 @@ app.use("/api", bodyParser.urlencoded({ extended: false }));
 app.use("/api", jsonParser, routes);
 
 app.get("/*", (req, res) => {
-  res.sendFile(join((config.root, "client", "build", "index.html")));
+  res.sendFile(join(config.root, "client", "build", "index.html"));
 });
 
 app.use((err, req, res, next) => {
