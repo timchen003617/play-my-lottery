@@ -31,7 +31,7 @@ export const TextInput = ({
     },
     input: {
       width: other.width || '100%',
-      minWidth: other.minWidth || '20px',
+      minWidth: other.minWidth || 'auto',
       height: other.height || '30px',
       marginLeft: other.margin || '0px',
       marginRight: other.margin || '0px',

@@ -104,6 +104,7 @@ let LoginPage = props => {
             type="text"
             id="account"
             maxLength={12}
+            width={'calc(100% - 26px)'}
           />
           <Field
             name="password"
@@ -112,6 +113,7 @@ let LoginPage = props => {
             id="password"
             placeholder="Password"
             maxLength={12}
+            width={'calc(100% - 26px)'}
           />
           <Button
             type="submit"
